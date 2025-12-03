@@ -1,9 +1,5 @@
 import pandas as pd
 
-# ==========================
-# REFERENTIAL INTEGRITY
-# ==========================
-
 def check_missing_visitors(applications, visitors):
     """Applications referencing visitor_ids that do not exist."""
     missing = ~applications["visitor_id"].isin(visitors["visitor_id"])
@@ -19,10 +15,6 @@ def check_missing_accounts(transactions, accounts):
     missing = ~transactions["account_id"].isin(accounts["account_id"])
     return missing.sum()
 
-
-# ==========================
-# BUSINESS VALIDATION RULES
-# ==========================
 
 def check_credit_score(applications):
     """Credit score must be between 300 and 850."""
@@ -50,11 +42,6 @@ def check_invalid_kyc(accounts):
 def check_invalid_tx_amount(transactions):
     """Transaction amount must be > 0."""
     return (transactions["amount"] <= 0).sum()
-
-
-# ==========================
-# MARKETING CONSISTENCY
-# ==========================
 
 def check_marketing_sources(visitors, marketing):
     """Marketing source must match metadata table."""
