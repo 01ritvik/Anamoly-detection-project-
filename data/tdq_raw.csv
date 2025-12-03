@@ -1,0 +1,6 @@
+table,missing_columns,extra_columns,dtype_mismatch,null_issues,duplicate_rows,missing_timestamps,time_gaps
+visitor_events,0,0,0,1,5890,10182.0,10.0
+applications,0,0,2,1,359,0.0,90.0
+accounts,0,0,1,0,145,0.0,118.0
+transactions,0,0,0,1,2720,5880.0,28.0
+marketing_source,0,0,0,0,0,,

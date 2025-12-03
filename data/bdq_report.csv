@@ -1,0 +1,11 @@
+check,num_issues
+apps_missing_visitor,4
+accs_missing_application,0
+tx_missing_account,0
+bad_credit_score,0
+negative_income,1
+invalid_status,0
+negative_deposit,0
+bad_kyc_status,0
+invalid_tx_amount,1
+marketing_invalid_cost,0
