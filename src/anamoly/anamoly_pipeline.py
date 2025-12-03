@@ -169,20 +169,15 @@ def run_pipeline(DATA_DIR="data"):
     tx = load_data(DATA_DIR)
     tx = preprocess(tx)
 
-    # Time-series anomaly detection
     tx_hour = build_hourly_series(tx)
     tx_hour = detect_ts_anomalies(tx_hour)
 
-    # Row-level anomalies
     rx, X = build_row_features(tx)
     rx = detect_row_anomalies(rx, X)
 
-    # Final ensemble
     rx = combine_ts_and_row(rx, tx_hour)
 
-    # Save results
     summary = save_outputs(rx, tx_hour, DATA_DIR)
-        # Save visualization plots
     print("📊 Saving visual plots to /visuals ...")
     save_distribution_plot(rx)
     save_daily_anomaly_plot(rx)
